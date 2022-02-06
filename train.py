@@ -8,7 +8,6 @@ from sklearn.tree import DecisionTreeClassifier
 
 import data_handler as dh
 
-import warnings
 from sklearn.metrics import accuracy_score as score
 
 
@@ -70,7 +69,6 @@ class Models:
         model.fit(X_train_scaled, y_train)
         preds = model.predict(X_test_scaled)
         acc = score(y_test, preds)
-        warnings.filterwarnings("ignore")
 
         return f'Accuracy from XGBClassifier:       {acc *100} %'
         
@@ -81,7 +79,6 @@ class Models:
         model.fit(X_train_scaled, y_train)
         preds = model.predict(X_test_scaled)
         acc = score(y_test, preds)
-        warnings.filterwarnings("ignore")
 
         return f'Accuracy from: DecisionTreeClassifier:        {acc *100} %'
 
