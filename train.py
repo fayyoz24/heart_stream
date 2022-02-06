@@ -8,14 +8,8 @@ from sklearn.tree import DecisionTreeClassifier
 
 import data_handler as dh
 
-import pandas as pd
-import numpy as np
-
 import warnings
-
-from sklearn.model_selection import cross_val_score, learning_curve
-from sklearn.metrics import accuracy_score as score, plot_confusion_matrix as plt_m
-from sklearn.model_selection import KFold
+from sklearn.metrics import accuracy_score as score
 
 
 class Models:

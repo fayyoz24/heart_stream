@@ -3,14 +3,8 @@ import data_handler as dh
 import pandas as pd
 import numpy as np
 from PIL import Image
-import matplotlib.pyplot as plt
-import plotly.express as px
-from difflib import get_close_matches
-# from sklearn.preprocessing import StandardScaler as scaler
 
-from data_handler import preprocess
 from train import Models
-from sklearn.svm import SVC
 import moduls as mls
 
 
@@ -113,7 +107,7 @@ try:
 
 except ValueError:
     st.error('Please enter valid data type!')
-    
+
 about = st.sidebar.button("contributors")
 if about:
     st.title("Fayyozjon Usmonov")

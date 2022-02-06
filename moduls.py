@@ -5,12 +5,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from xgboost import XGBClassifier
 from sklearn.tree import DecisionTreeClassifier
-
-import warnings
 import data_handler as dh
-from sklearn.model_selection import cross_val_score, learning_curve
-from sklearn.metrics import accuracy_score as score, plot_confusion_matrix as plt_m
-from sklearn.model_selection import KFold
 
 
 def models():
