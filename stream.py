@@ -26,7 +26,6 @@ if data_ == 'Yes':
     st.markdown("<h1 style='text-align: center; color: white;'>The top 1000 books!</h1>", unsafe_allow_html=True)
     st.write(df)
 
-
 st.sidebar.subheader("Alghorithms")
 top_book_ = st.sidebar.selectbox(
     label ="Select your Algorithm",
@@ -42,6 +41,7 @@ if top_book_ :
     st.text('''
     
     
+
 
     ''')
     st.write(models[a.index(top_book_)])
