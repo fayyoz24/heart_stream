@@ -6,11 +6,13 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import plotly.express as px
 from difflib import get_close_matches
-from sklearn.preprocessing import StandardScaler as scaler
+# from sklearn.preprocessing import StandardScaler as scaler
 
 from data_handler import preprocess
 from train import Models
 from sklearn.svm import SVC
+import moduls as mls
+
 
 st.markdown("<h1 style='text-align: center; color: blue;'>You can not live without HEART!...</h1>", unsafe_allow_html=True)
 img = Image.open("heart.jpg")
@@ -87,12 +89,10 @@ if user_input == 'Yes':
         'exng':exng, 'oldpeak':oldpeak, 'slp':slp, 'caa':caa, 'thall':thall}, index=[0])
 
     X_train_scaled, X_test_scaled, y_train, y_test, scaler = dh.preprocess('./heart.csv')
-    X_train_scaled, X_test_scaled, y_train, y_test, scaler = dh.preprocess('./heart.csv')
-    model1 = SVC(kernel='rbf')
-    model1.fit(X_train_scaled, y_train)
+    x_scaled  = scaler.transform(x)
+    predictions = np.array([model.predict(x_scaled) for model in mls.models()])
 
-    predictions = np.array([model1.predict(x)])
-    if predictions==0:
+    if predictions.mean() < 0.5:
         st.markdown("<h3 style='text-align: center; color: blue;'>You are Healthy!!!</h3>", unsafe_allow_html=True)
     else:
         st.markdown("<h3 style='text-align: center; color: blue;'>Please go to the doctor...\n I got POSITIVE result</h3>", unsafe_allow_html=True)
