@@ -8,7 +8,7 @@ from train import Models
 import moduls as mls
 
 
-st.markdown("<h1 style='text-align: center; color: blue;'>You can not live without HEART!...</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: coral;'>You can not live without HEART!...</h1>", unsafe_allow_html=True)
 img = Image.open("heart.jpg")
 st.image(img, width=700)
 
@@ -19,7 +19,7 @@ data_ = st.sidebar.radio(
     options=("No",'Yes'))
 
 if data_ == 'Yes':
-    st.markdown("<h1 style='text-align: center; color: white;'>The top 1000 books!</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: red;'>The given data!</h1>", unsafe_allow_html=True)
     st.write(df)
 
 st.sidebar.subheader("Alghorithms")
@@ -42,11 +42,10 @@ if top_book_ :
     ''')
     st.write(models[a.index(top_book_)])
 
-
-user_input = st.sidebar.radio(
+try:
+    user_input = st.sidebar.radio(
     label="Do you want to know about your healthy?",
     options=("No",'Yes'))
-try:
     if user_input == 'Yes':
         
         st.title('Disease Predictor')
@@ -57,7 +56,7 @@ try:
         """
         st.markdown(text,unsafe_allow_html=True)
         st.title('')
-        st.markdown('<h5> Please Enter following commands!</h5>', unsafe_allow_html=True)
+        st.markdown('<h5> Please Answer following questions!</h5>', unsafe_allow_html=True)
         st.title('')
 
         age = st.text_input("How old are you? \n")
