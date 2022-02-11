@@ -1,2 +1,3 @@
 # heart_stream
-predicting heat diseases by using multiple machine learning algorithms 
+The web app based on Streamlit and predict the heart disease using by multiple of machine learning algorithms!
+
